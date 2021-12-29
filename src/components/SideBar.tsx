@@ -1,6 +1,7 @@
+import { memo } from "react";
 import { Button } from "./Button";
 
-interface SideBarProps {
+interface SideBarProps { 
   genres: Array<{
     id: number;
     name: 'action' | 'comedy' | 'documentary' | 'drama' | 'horror' | 'family';
@@ -10,7 +11,7 @@ interface SideBarProps {
   buttonClickCallback: (args: any) => void;
 }
 
-export function SideBar({
+export function SideBarComponent({
   genres,
   selectedGenreId,
   buttonClickCallback
@@ -34,3 +35,5 @@ export function SideBar({
     </nav>
   )
 }
+
+export const SideBar = memo(SideBarComponent);
